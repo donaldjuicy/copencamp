@@ -133,7 +133,7 @@
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      pointer-events: none; /* let clicks pass to the links */
+      pointer-events: none;
       top: 50%;
       transform: translate(-50%, -50%);
     }
@@ -141,7 +141,7 @@
     .nav-center-title {
       font-family: 'Fraunces', serif;
       font-weight: 800;
-      font-size: 1.25rem; /* larger, still consistent */
+      font-size: 1.25rem;
       color: var(--forest);
       letter-spacing: 0.01em;
       line-height: 1;
@@ -149,8 +149,63 @@
       text-transform: none;
     }
 
-    @media (max-width: 920px) {
-      .nav-center { display: none; }
+    /* HAMBURGER BUTTON — hidden on desktop */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 110;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* MOBILE DRAWER */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(245,240,232,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--light-line);
+      flex-direction: column;
+      padding: 1rem 2rem 1.5rem;
+      gap: 0;
+      z-index: 99;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: var(--charcoal);
+      font-weight: 500;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--light-line);
+      transition: color 0.2s;
+    }
+    .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer a.nav-cta {
+      margin-top: 0.75rem;
+      background: var(--forest);
+      color: var(--cream) !important;
+      padding: 0.8rem 1.3rem;
+      border-radius: 100px;
+      text-align: center;
+      font-weight: 600;
+      border-bottom: none;
     }
 
     /* HERO */
@@ -371,7 +426,7 @@
       border-radius: 14px;
       background: white;
       border: 1px solid var(--light-line);
-      margin-top: 1.6rem; /* add space below heading to avoid overlap */
+      margin-top: 1.6rem;
     }
     .carousel-track {
       display: flex;
@@ -385,12 +440,10 @@
       align-items: center;
       justify-content: center;
       padding: 1.2rem;
-      /* reserve space so layout doesn't jump */
       min-height: 420px;
       background: linear-gradient(180deg, rgba(250,250,250,0.8), rgba(245,245,245,0.95));
     }
     .carousel-img {
-      /* keep original proportions without stretching or cropping */
       width: auto;
       max-width: 100%;
       max-height: 100%;
@@ -1078,17 +1131,16 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
-    
-    /* Terms button — centered and pleasing proportions (golden ratio spacing) */
+
     .terms-wrapper {
       display: flex;
       justify-content: center;
-      margin-top: 1.618rem; /* golden ratio spacing */
+      margin-top: 1.618rem;
     }
 
     .terms-btn {
       display: inline-block;
-      padding: 0.64rem 1.12rem; /* proportions ~ 1 : 1.75 */
+      padding: 0.64rem 1.12rem;
       border-radius: 10px;
       background: var(--sage);
       color: #fff;
@@ -1102,6 +1154,87 @@
 
     .terms-btn:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(18,18,18,0.12); }
     .terms-btn:focus { outline: 3px solid rgba(139,0,0,0.14); outline-offset: 4px; }
+
+    /* =============================================
+       RESPONSIVE STYLES — layout only, no content changes
+       ============================================= */
+
+    @media (max-width: 1024px) {
+      nav { padding: 1.25rem 2rem; }
+      .nav-center { display: none; }
+
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 4rem 2.5rem 3rem; }
+      .hero-right { padding: 3rem 2.5rem; }
+
+      section { padding: 4rem 2.5rem; }
+      .copencamp { padding: 4rem 2.5rem; }
+      .weeks-section { padding: 4rem 2.5rem; }
+      .info-section { padding: 4rem 2.5rem; }
+      .faq-section { padding: 4rem 2.5rem; grid-template-columns: 1fr; gap: 2.5rem; }
+      .cta-section { padding: 4rem 2.5rem; }
+      .reg-banner { padding: 2rem 2.5rem; }
+      .gallery-carousel { padding: 2rem 2.5rem; }
+      footer { padding: 2.5rem 2.5rem; }
+      .divider { margin: 0 2.5rem; }
+
+      .camps-grid { grid-template-columns: 1fr; }
+      .weeks-grid { grid-template-columns: 1fr 1fr; }
+      .info-grid { grid-template-columns: 1fr 1fr; }
+
+      .modal-content { padding: 2rem; }
+      .modal-options { grid-template-columns: 1fr !important; gap: 1rem; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .nav-center { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 3rem 1.25rem 2.5rem; }
+      .hero-right { padding: 2rem 1.25rem; gap: 1rem; }
+      .hero-actions { flex-wrap: wrap; gap: 0.75rem; }
+      .hero-stat-row { gap: 2rem; margin-top: 2.5rem; }
+
+      section { padding: 3rem 1.25rem; }
+      .copencamp { padding: 3rem 1.25rem; }
+      .weeks-section { padding: 3rem 1.25rem; }
+      .info-section { padding: 3rem 1.25rem; }
+      .faq-section { padding: 3rem 1.25rem; grid-template-columns: 1fr; gap: 2rem; }
+      .cta-section { padding: 3rem 1.25rem; }
+      .reg-banner { padding: 1.5rem 1.25rem; flex-direction: column; text-align: center; }
+      .gallery-carousel { padding: 2rem 1.25rem; }
+      footer { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+      .divider { margin: 0 1.25rem; }
+
+      .camp-card { padding: 1.75rem 1.25rem; }
+      .weeks-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+      .week-card { padding: 1.1rem; }
+      .info-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .info-card { padding: 1.5rem 1rem; }
+
+      .modal { padding: 0; align-items: flex-end; }
+      .modal-content { border-radius: 24px 24px 0 0; max-height: 85vh; padding: 2rem 1.25rem; }
+      .modal-header h2 { font-size: 1.5rem; }
+      .modal-options { grid-template-columns: 1fr !important; gap: 1rem; }
+
+      .cta-buttons { flex-direction: column; width: 100%; }
+      .cta-buttons .btn-primary,
+      .cta-buttons .btn-outline { justify-content: center; width: 100%; }
+
+      .footer-links { flex-direction: column; gap: 0.75rem; }
+      .carousel-slide { min-height: 260px; }
+    }
+
+    @media (max-width: 480px) {
+      .weeks-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .hero-stat-row { gap: 1.5rem; }
+      .reg-banner-text h3 { font-size: 1.2rem; }
+      .btn-white { width: 100%; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -1119,12 +1252,21 @@
     <div class="nav-center-title">CopenCamp 2026</div>
   </div>
   <ul class="nav-links">
-    
     <li><a href="#schedule">Schedule</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Register Now</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#schedule" onclick="closeDrawer()">Schedule</a>
+  <a href="#faq" onclick="closeDrawer()">FAQ</a>
+  <a href="#contact" class="nav-cta" onclick="closeDrawer()">Register Now</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1204,7 +1346,7 @@
       <div class="card-icon green">⛺</div>
       <div class="card-badge amber-badge">Ages 7+</div>
       <h3>Summer CAMPS</h3>
-      <p>Week-long, independent thematic workshops led by qualified teachers and coaches. Mix and match weeks based on your child's interests — each week stands alone. <br>
+      <p>Week-long, independent thematic workshops led by qualified teachers and coaches. Mix and match weeks based on your child's interests — each week stands alone.   
         <strong>Includes daily schedule.</strong></p>
       <div class="camp-meta">
         <div class="camp-meta-item">
@@ -1250,7 +1392,7 @@
 <!-- WEEKS SCHEDULE -->
 <section class="weeks-section" id="schedule">
   <div class="section-label">What's happening</div>
-  <h2 class="section-title reveal">Six weeks of<br/><em>themed adventure</em></h2>
+  <h2 class="section-title reveal">Six weeks of</h2>
   <div class="weeks-grid">
     <div class="week-card reveal" data-week="27" onclick="openModal(event)">
       <div class="week-number">27</div>
@@ -1372,7 +1514,7 @@
       <div class="modal-option">
         <div class="modal-option-icon">🧭</div>
         <h3>Explorers</h3>
-        <p>Explore Copenhagen’s parks and beaches with map-reading adventures, outdoor activities, and a new adventure every day—be ready to head out on time!</p>
+        <p>Explore Copenhagen's parks and beaches with map-reading adventures, outdoor activities, and a new adventure every day—be ready to head out on time!</p>
         <a href="https://www.lcen.dk/events/copenhagen-explorers-week-29-age-group-7-to-11-years" class="btn-primary" target="_blank" rel="noopener noreferrer">Register Now →</a>
       </div>
       <div class="modal-option">
@@ -1459,7 +1601,7 @@
       <div class="modal-option">
         <div class="modal-option-icon">🧭</div>
         <h3>Explorers</h3>
-        <p>Explore Copenhagen’s parks and beaches with map-reading adventures, outdoor activities, and a new adventure every day—be ready to head out on time!</p>
+        <p>Explore Copenhagen's parks and beaches with map-reading adventures, outdoor activities, and a new adventure every day—be ready to head out on time!</p>
         <a href="mailto:copencamp@gmail.com" class="btn-primary">Register Now →</a>
       </div>
     </div>
@@ -1716,6 +1858,14 @@
       if (e.key === 'ArrowRight') goTo(index + 1);
     });
 
+    // Touch swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(diff > 0 ? index + 1 : index - 1);
+    }, { passive: true });
+
     window.setCarouselImages = function(imageUrls){
       for(let i=0;i<imgs.length;i++){
         if (imageUrls[i]){ imgs[i].dataset.src = imageUrls[i]; imgs[i].src = imageUrls[i]; }
@@ -1732,7 +1882,6 @@
     createDots();
     goTo(0);
     setInterval(() => goTo(index + 1), 5000);
-    // Auto-populate carousel with local images if present
     try {
       if (window.setCarouselImages) {
         window.setCarouselImages([
@@ -1746,7 +1895,6 @@
         ]);
       }
     } catch (e) { console.warn('Carousel image load failed', e); }
-    // Remove empty placeholder slides (those without dataset.src)
     for (let i = imgs.length - 1; i >= 0; i--) {
       if (!imgs[i].dataset.src) {
         const slide = slides[i];
@@ -1755,7 +1903,6 @@
         imgs.splice(i, 1);
       }
     }
-    // If no slides remain, keep one empty placeholder to avoid errors
     if (slides.length === 0) {
       const wrapper = document.getElementById('carouselTrack');
       const placeholder = document.createElement('div');
@@ -1765,7 +1912,6 @@
       slides.push(placeholder);
       imgs.push(placeholder.querySelector('.carousel-img'));
     }
-    // Recreate dots and reset position after removing placeholders
     createDots();
     goTo(0);
   })();
@@ -1796,6 +1942,21 @@
 </footer>
 
 <script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navDrawer = document.getElementById('navDrawer');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navDrawer.classList.toggle('open');
+  });
+  function closeDrawer() {
+    hamburger.classList.remove('open');
+    navDrawer.classList.remove('open');
+  }
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navDrawer.contains(e.target)) closeDrawer();
+  });
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1817,12 +1978,10 @@
     const item = el.parentElement;
     const toggle = el.querySelector('.faq-toggle');
     const isOpen = item.classList.contains('open');
-
     document.querySelectorAll('.faq-item').forEach(i => {
       i.classList.remove('open');
       i.querySelector('.faq-toggle').textContent = '+';
     });
-
     if (!isOpen) {
       item.classList.add('open');
       toggle.textContent = '−';
@@ -1866,19 +2025,16 @@
     document.body.style.overflow = '';
   }
 
-  // Close modal when clicking backdrop
   document.querySelectorAll('.modal').forEach(modal => {
     modal.addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
   });
 
-  // Close modal with Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
 </script>
 
 </body>
-
-
+</html>
