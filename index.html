@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Learning Centre | Enrichment Beyond Classroom</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -86,7 +86,7 @@
     .nav-logo:hover .nav-logo-mark { transform: translateY(-3px) scale(1.03); box-shadow: 0 16px 38px rgba(12,18,20,0.09); }
 
     .nav-logo-text {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-weight: 700;
       font-size: 1rem;
       color: var(--charcoal);
@@ -139,7 +139,7 @@
     }
 
     .nav-center-title {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-weight: 800;
       font-size: 1.25rem;
       color: var(--forest);
@@ -270,7 +270,7 @@
     }
 
     .hero-title {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: clamp(3rem, 5vw, 4.5rem);
       font-weight: 800;
       line-height: 1.05;
@@ -361,7 +361,7 @@
 
     .hero-stat strong {
       display: block;
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 2rem;
       font-weight: 700;
       color: var(--amber);
@@ -397,27 +397,22 @@
       animation: slideIn 0.6s forwards;
     }
 
-    /* Remove underline and inherit text color for hero card links */
     a.hero-card { text-decoration: none; color: inherit; }
-    /* Remove default link styling (blue lines) for camp card anchors */
     a.camp-card { text-decoration: none; color: inherit; display: block; }
     a.camp-card:focus { outline: none; box-shadow: none; }
 
-    /* Center and align the special CARE hero card */
     .hero-card.hero-care { text-align: center; }
     .hero-card.hero-care .card-icon { margin: 0 auto 0.6rem; display: block; }
     .hero-card.hero-care .card-badge { position: static; display: inline-block; margin: 0 auto 0.6rem; }
     .hero-card.hero-care h3,
     .hero-card.hero-care p { text-align: center; }
 
-    /* Make the Copencamp CARE card match the hero CARE styling */
     .camp-card.hero-care { text-align: center; }
     .camp-card.hero-care .card-icon { margin: 0 auto 0.6rem; display: block; }
     .camp-card.hero-care .card-badge { position: static; display: inline-block; margin: 0 auto 0.6rem; }
     .camp-card.hero-care h3,
     .camp-card.hero-care p { text-align: center; }
 
-    /* Image carousel */
     .gallery-carousel { padding: 2.25rem 5rem; background: var(--ivory); }
     .gallery-carousel .section-label { margin-bottom: 0.5rem; color: var(--sage); }
     .carousel {
@@ -453,9 +448,7 @@
       background: #fafafa;
       display: block;
     }
-    .carousel-controls {
-      position: absolute; inset: 0; pointer-events: none;
-    }
+    .carousel-controls { position: absolute; inset: 0; pointer-events: none; }
     .carousel-btn {
       pointer-events: auto;
       position: absolute;
@@ -472,14 +465,12 @@
     .carousel-dot { width:10px; height:10px; background:var(--light-line); border-radius:50%; cursor:pointer; border: none; }
     .carousel-dot.active { background:var(--sage); }
 
-    /* Make the Copencamp CAMPS card match hero placement and be linkable */
     .camp-card.hero-camps { text-align: center; }
     .camp-card.hero-camps .card-icon { margin: 0 auto 0.6rem; display: block; }
     .camp-card.hero-camps .card-badge { position: static; display: inline-block; margin: 0 auto 0.6rem; }
     .camp-card.hero-camps h3,
     .camp-card.hero-camps p { text-align: center; }
 
-    /* Make the hero CAMPS badge match the hero CARE styling (centered, static badge) */
     .hero-card.hero-camps { text-align: center; }
     .hero-card.hero-camps .card-icon { margin: 0 auto 0.6rem; display: block; }
     .hero-card.hero-camps .card-badge { position: static; display: inline-block; margin: 0 auto 0.6rem; }
@@ -510,7 +501,7 @@
     .card-icon.rust { background: rgba(196, 92, 42, 0.12); }
 
     .hero-card h3 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-weight: 600;
       font-size: 1.1rem;
       color: var(--forest);
@@ -558,9 +549,7 @@
     }
 
     /* SECTION COMMONS */
-    section {
-      padding: 6rem 5rem;
-    }
+    section { padding: 6rem 5rem; }
 
     .section-label {
       display: inline-flex;
@@ -581,7 +570,7 @@
     }
 
     .section-title {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-weight: 800;
       font-size: clamp(2.2rem, 3.5vw, 3rem);
       line-height: 1.1;
@@ -620,9 +609,7 @@
       transition: background 0.3s;
     }
 
-    .camp-card:hover {
-      background: rgba(255,255,255,0.1);
-    }
+    .camp-card:hover { background: rgba(255,255,255,0.1); }
 
     .camp-card-header {
       display: flex;
@@ -631,9 +618,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .camp-emoji {
-      font-size: 2.5rem;
-    }
+    .camp-emoji { font-size: 2.5rem; }
 
     .camp-age {
       background: var(--amber);
@@ -652,13 +637,10 @@
       transition: transform 0.12s ease, box-shadow 0.12s ease;
     }
 
-    .camp-age:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.10);
-    }
+    .camp-age:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.10); }
 
     .camp-card h3 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--cream);
@@ -672,11 +654,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .camp-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+    .camp-meta { display: flex; flex-direction: column; gap: 0.5rem; }
 
     .camp-meta-item {
       display: flex;
@@ -697,10 +675,7 @@
     }
 
     /* WEEKS SCHEDULE */
-    .weeks-section {
-      background: var(--cream);
-      padding: 6rem 5rem;
-    }
+    .weeks-section { background: var(--cream); padding: 6rem 5rem; }
 
     .weeks-grid {
       margin-top: 3rem;
@@ -720,10 +695,7 @@
       cursor: pointer;
     }
 
-    .week-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--sage);
-    }
+    .week-card:hover { transform: translateY(-3px); border-color: var(--sage); }
 
     /* MODAL STYLES */
     .modal {
@@ -737,9 +709,7 @@
       padding: 2rem;
     }
 
-    .modal.active {
-      display: flex;
-    }
+    .modal.active { display: flex; }
 
     .modal-content {
       background: white;
@@ -755,10 +725,8 @@
 
     .modal-close {
       position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      width: 32px;
-      height: 32px;
+      top: 1.5rem; right: 1.5rem;
+      width: 32px; height: 32px;
       background: var(--light-line);
       border: none;
       border-radius: 50%;
@@ -771,28 +739,19 @@
       transition: background 0.2s;
     }
 
-    .modal-close:hover {
-      background: var(--sage);
-      color: white;
-    }
+    .modal-close:hover { background: var(--sage); color: white; }
 
-    .modal-header {
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
+    .modal-header { margin-bottom: 2.5rem; text-align: center; }
 
     .modal-header h2 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 2rem;
       font-weight: 800;
       color: var(--forest);
       margin-bottom: 0.5rem;
     }
 
-    .modal-header p {
-      font-size: 0.95rem;
-      color: var(--warm-gray);
-    }
+    .modal-header p { font-size: 0.95rem; color: var(--warm-gray); }
 
     .modal-options {
       display: grid;
@@ -808,35 +767,19 @@
       transition: all 0.3s;
     }
 
-    .modal-option:hover {
-      border-color: var(--sage);
-      box-shadow: 0 12px 32px rgba(74, 124, 89, 0.15);
-    }
-
-    .modal-option-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+    .modal-option:hover { border-color: var(--sage); box-shadow: 0 12px 32px rgba(74, 124, 89, 0.15); }
+    .modal-option-icon { font-size: 2.5rem; margin-bottom: 1rem; }
 
     .modal-option h3 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 1.4rem;
       font-weight: 700;
       color: var(--forest);
       margin-bottom: 0.8rem;
     }
 
-    .modal-option p {
-      font-size: 0.9rem;
-      color: var(--warm-gray);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .modal-option .btn-primary {
-      width: 100%;
-      justify-content: center;
-    }
+    .modal-option p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.6; margin-bottom: 1.5rem; }
+    .modal-option .btn-primary { width: 100%; justify-content: center; }
 
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -844,7 +787,7 @@
     }
 
     .week-number {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 2.5rem;
       font-weight: 800;
       color: var(--light-line);
@@ -852,25 +795,9 @@
       margin-bottom: 0.5rem;
     }
 
-    .week-date {
-      font-size: 0.78rem;
-      color: var(--warm-gray);
-      margin-bottom: 0.8rem;
-    }
-
-    .week-theme {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--forest);
-      line-height: 1.4;
-    }
-
-    .week-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.8rem;
-    }
+    .week-date { font-size: 0.78rem; color: var(--warm-gray); margin-bottom: 0.8rem; }
+    .week-theme { font-weight: 600; font-size: 0.9rem; color: var(--forest); line-height: 1.4; }
+    .week-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
 
     .week-tag {
       background: var(--forest);
@@ -887,10 +814,7 @@
     .week-tag.rust { background: var(--rust); }
 
     /* INFO SECTION */
-    .info-section {
-      background: var(--cream);
-      padding: 6rem 5rem;
-    }
+    .info-section { background: var(--cream); padding: 6rem 5rem; }
 
     .info-grid {
       margin-top: 3.5rem;
@@ -906,24 +830,17 @@
       border-radius: 18px;
     }
 
-    .info-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
+    .info-icon { font-size: 1.8rem; margin-bottom: 1rem; }
 
     .info-card h4 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 1rem;
       font-weight: 600;
       color: var(--forest);
       margin-bottom: 0.5rem;
     }
 
-    .info-card p {
-      font-size: 0.82rem;
-      color: var(--warm-gray);
-      line-height: 1.65;
-    }
+    .info-card p { font-size: 0.82rem; color: var(--warm-gray); line-height: 1.65; }
 
     /* FAQ SECTION */
     .faq-section {
@@ -933,15 +850,8 @@
       gap: 5rem;
     }
 
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--light-line);
-    }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid var(--light-line); }
 
     .faq-question {
       display: flex;
@@ -992,22 +902,11 @@
 
     .cta-section .section-label { color: var(--leaf); }
     .cta-section .section-label::before { background: var(--leaf); }
-
     .cta-section .section-title { color: var(--cream); }
     .cta-section .section-title em { color: var(--amber); }
 
-    .cta-desc {
-      font-size: 1rem;
-      color: rgba(245, 240, 232, 0.65);
-      max-width: 480px;
-      line-height: 1.7;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+    .cta-desc { font-size: 1rem; color: rgba(245, 240, 232, 0.65); max-width: 480px; line-height: 1.7; }
+    .cta-buttons { display: flex; gap: 1rem; margin-top: 1rem; }
 
     .btn-outline {
       display: inline-flex;
@@ -1023,9 +922,7 @@
       transition: all 0.2s;
     }
 
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
 
     /* FOOTER */
     footer {
@@ -1038,29 +935,17 @@
       font-size: 0.8rem;
     }
 
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
+    .footer-brand { display: flex; flex-direction: column; gap: 0.3rem; }
 
     .footer-brand strong {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 1rem;
       color: var(--cream);
     }
 
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
+    .footer-links { display: flex; gap: 2rem; }
 
-    .footer-links a {
-      color: rgba(245, 240, 232, 0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .footer-links a { color: rgba(245, 240, 232, 0.5); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--cream); }
 
     /* ANIMATIONS */
@@ -1074,24 +959,10 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s, transform 0.6s;
-    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* DECORATIVE DIVIDER */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--light-line), transparent);
-      margin: 0 5rem;
-    }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--light-line), transparent); margin: 0 5rem; }
 
     /* REGISTRATION HIGHLIGHT */
     .reg-banner {
@@ -1104,16 +975,13 @@
     }
 
     .reg-banner-text h3 {
-      font-family: 'Fraunces', serif;
+      font-family: 'Lora', serif;
       font-size: 1.5rem;
       color: white;
       margin-bottom: 0.3rem;
     }
 
-    .reg-banner-text p {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.8);
-    }
+    .reg-banner-text p { font-size: 0.88rem; color: rgba(255,255,255,0.8); }
 
     .btn-white {
       background: white;
@@ -1127,16 +995,9 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .btn-white:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
 
-    .terms-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: 1.618rem;
-    }
+    .terms-wrapper { display: flex; justify-content: center; margin-top: 1.618rem; }
 
     .terms-btn {
       display: inline-block;
@@ -1672,7 +1533,6 @@
         </ul>
       </div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What is the age group suitability?
@@ -1683,7 +1543,6 @@
         <p><strong>CopenCamp Summer CARE:</strong> children aged 4–6 years.</p>
       </div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What are the themes for the six weeks?
@@ -1700,7 +1559,6 @@
         </ul>
       </div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What is the location?
@@ -1708,7 +1566,6 @@
       </div>
       <div class="faq-answer">International School of Hellerup<br/>Rygårds Alle 131<br/>2900 Hellerup</div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What about food, clothing, and other equipment?
@@ -1720,7 +1577,6 @@
         <p><strong>Other equipment:</strong> Unless required by facilitators, electronic devices (phones, tablets, games, etc.) should not be brought. Expensive or treasured items should be left at home.</p>
       </div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What is the pickup time?
@@ -1732,7 +1588,6 @@
         <p>If a child needs to leave early during the day, a parent must notify <a href="mailto:copencamp@gmail.com" style="color:var(--sage);">copencamp@gmail.com</a> in advance.</p>
       </div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What is the standard of conduct?
@@ -1743,7 +1598,6 @@
         <p>CopenCamp reserves the right to withdraw any student whose behaviour is considered incompatible with the programme; no refund will be given in such cases. Parents agree to pay for damage caused by their child and to support positive conduct standards.</p>
       </div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         How is payment handled?
@@ -1754,7 +1608,6 @@
         <p>Enrollment is confirmed only when payment is received into the Learning Centre bank account. After payment, please email payment details to <a href="mailto:copencamp@gmail.com" style="color:var(--sage);">copencamp@gmail.com</a>.</p>
       </div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What is the mode of communication?
@@ -1762,7 +1615,6 @@
       </div>
       <div class="faq-answer">All CopenCamp activities and instruction are conducted in English. A basic level of English is a prerequisite for participation.</div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         When are the daily start and end times?
@@ -1770,7 +1622,6 @@
       </div>
       <div class="faq-answer">CopenCamp Summer CAMP runs from <strong>09:00 – 16:00</strong> Monday–Friday. CopenCamp Summer CARE runs from <strong>08:30 – 16:30</strong> Monday–Friday.</div>
     </div>
-
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
         What are the refund rules?
@@ -2038,6 +1889,3 @@
 
 </body>
 </html>
-
-
-
